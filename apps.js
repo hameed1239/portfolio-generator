@@ -1,5 +1,14 @@
-var message = 'Hello Node!';
+const profileDataArgs = process.argv.slice(2, process.argv.length);
+console.log(profileDataArgs);
 
-var sum = 5+3;
-console.log(message);
-console.log(sum);
+const printProfileData = profileDataArr => {
+    for (let i = 0; i < profileDataArr.length; i++){
+        
+        console.log(profileDataArr[i]);
+        console.log("=======================");
+        profileDataArr.forEach(profileItem => console.log(profileItem));
+    }
+};
+
+printProfileData(profileDataArgs);
+
