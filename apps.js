@@ -1,5 +1,5 @@
-// const fs = require('fs');
-// const generatePage = require('./src/page-template');
+const fs = require('fs');
+const generatePage = require('./src/page-template');
 
 // fs.writeFile('index.html', generatePage(name, github), err => {
 //     if (err) throw err;
@@ -151,7 +151,51 @@ Add a New Project
             }
         })
 }
-promptUser()
-    // .then(answers => console.log(answers))
-    .then(promptProject)
-    .then(portfolioData => console.log(portfolioData));
+
+const mockData = {
+    name: 'hameed',
+    github: 'hmeed1239',
+    about: 'I love coding',
+    projects: [
+        {
+            name: 'portfolio generator',
+            description: 'portfolio generator  krngkg pgsklrgnrough rnng spjgwrngjnd; d;jjs; g;sotgh lig rtgtrlhg rtogh tr;g tjghhg iot ghtoeighteghtegh iojhuihtgiohjo  oihhuohoitheg iohuohyoiet oihoteihgyoejtgoie ;eoihoetgeioj s;he;ghlguht98 luhgotgheto spjgwrngjnd; d;jjs; g;sotgh lig rtgtrlhg rtogh tr;g tjghhg iot ghtoeighteghtegh iojhuihtgiohjo  oihhuohoitheg iohuohyoiet oihoteihgyoejtgoie ;eoihoetgeioj s;he;ghlguht98 luhgotgheto  spjgwrngjnd; d;jjs; g;sotgh lig rtgtrlhg rtogh tr;g tjghhg iot ghtoeighteghtegh iojhuihtgiohjo  oihhuohoitheg iohuohyoiet oihoteihgyoejtgoie ;eoihoetgeioj s;he;ghlguht98 luhgotgheto  ',
+            languages: ['Java','CSS','Node','JavaScript','HTML',],
+            link: 'https://hameed.kazeem',
+            feature: true,
+            confirmAddProject: true,
+            confirmAbout: true,
+            about: 'This is the only project that should have an about info'
+        },
+        {
+            name: 'Weather map',
+            description: 'Weather map',
+            languages: ['Java','CSS','JavaScript','HTML',],
+            link: 'https://hameed.kazeem',
+            feature: true,
+            confirmAddProject: true,
+            confirmAbout: false
+        },
+        {
+            name: 'Robot Gladiators',
+            description: 'Robot Gladiators kdmvdjo  pojagvkjfpja jgaj grjnpgi anjd gpn gkd;gouet n gijirjfsdkfjrsf  srlgksrj gjsrjfsklgnv spjgwrngjnd; d;jjs; g;sotgh lig rtgtrlhg rtogh tr;g tjghhg iot ghtoeighteghtegh iojhuihtgiohjo  oihhuohoitheg iohuohyoiet oihoteihgyoejtgoie ;eoihoetgeioj s;he;ghlguht98 luhgotgheto  spjgwrngjnd; d;jjs; g;sotgh lig rtgtrlhg rtogh tr;g tjghhg iot ghtoeighteghtegh iojhuihtgiohjo  oihhuohoitheg iohuohyoiet oihoteihgyoejtgoie ;eoihoetgeioj s;he;ghlguht98 luhgotgheto isrjgskdjgmpsjsgn s srogjs prjp gjsrjgs',
+            languages: ['Java','CSS','Node','JavaScript','HTML',],
+            link: 'https://hameed.kazeem',
+            feature: false,
+            confirmAddProject: false,
+            confirmAbout: false
+        }
+    ]
+};
+// promptUser()
+//     .then(promptProject)
+    // .then(portfolioData => {
+        // const pageHTML = generatePage(portfolioData);
+        const pageHTML = generatePage(mockData);
+
+        fs.writeFile('./index.html', pageHTML, err => {
+            if (err) throw new Error(err);
+
+            console.log('Page created! Check out index.html in this directory to see it!');
+        });
+    // });
