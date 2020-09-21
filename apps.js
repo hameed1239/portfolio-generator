@@ -33,7 +33,7 @@ const promptUser = () => {
                     return true;
                 }
                 else {
-                    console.log('Please enter your name!');
+                    console.log('Please enter your git hub username!');
                     return false;
                 }
             }
@@ -53,7 +53,7 @@ const promptUser = () => {
                     return true;
                 }
                 else {
-                    console.log('Please enter your name!');
+                    console.log('Please about information!');
                     return false;
                 }
             },
@@ -98,7 +98,7 @@ Add a New Project
                     return true;
                 }
                 else {
-                    console.log('Please enter your name!');
+                    console.log('Please enter a description!');
                     return false;
                 }
             }
@@ -118,7 +118,7 @@ Add a New Project
                     return true;
                 }
                 else {
-                    console.log('Please enter your name!');
+                    console.log('Please enter a link!');
                     return false;
                 }
             }
